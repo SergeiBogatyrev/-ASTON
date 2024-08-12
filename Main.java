@@ -3,29 +3,37 @@ import java.lang.reflect.Array;
 public class Main {
 
     public static void main(String[] args) {
-        Circle circle = new Circle(5, "Красный", "Черный");
-        System.out.println("Периметр круга: " + circle.calculatePerimeter() + " см");
-        System.out.println("Площадь круга: " + circle.calculateArea() + " кв см");
-        System.out.println("Цвет заливки круга: " + circle.getFillColor());
-        System.out.println("Цвет контура круга: " + circle.getBorderColor());
-
-        Rectangle rectangle = new Rectangle(3, 4, "Синий", "Зеленый");
-        System.out.println("Периметр квадрата: " + rectangle.calculatePerimeter() + " см");
-        System.out.println("Площадь квадрата: " + rectangle.calculateArea() + " кв см");
-        System.out.println("Цвет заливки квадрата: " + rectangle.getFillColor());
-        System.out.println("Цвет контура квадрата: " + rectangle.getBorderColor());
-
-        Triangle triangle = new Triangle(3, 4, 5, "Желтый", "Фиолетовый");
-        System.out.println("Периметр треугольника: " + triangle.calculatePerimeter() + " см");
-        System.out.println("Площадь треугольника: " + triangle.calculateArea() + " кв см");
-        System.out.println("Цвет заливки треугольника: " + triangle.getFillColor());
-        System.out.println("Цвет контура труегольника: " + triangle.getBorderColor());
+        Animal a = new Animal();
+        Cat barsik = new Cat();
+        Dog bobik = new Dog();
+        Cat b2 = new Cat();
+        barsik.run(150);
+        b2.swim(10);
+        bobik.run(550);
+        bobik.swim(8);
+        System.out.println("Количество животных: " + Animal.getCountAnimal());
+        System.out.println("Количество котов: " + Cat.getCountCat());
+        System.out.println("Количество собак: " + Dog.getCountDog());
 
 
-
+        Cat[] cats = new Cat[4];
+        for (int i = 0; i < cats.length; i++) {
+            cats[i] = new Cat();
+        }
+        cats[0].setCatDish(30);
+        for (int i = 0; i < cats.length; i++) {
+            cats[i].eat();
+            cats[i].getSatiety();
+            System.out.println(cats[0].getCatDish());
         }
 
+
+
+
+
     }
+
+}
 
 
 
